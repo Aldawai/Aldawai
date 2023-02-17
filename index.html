@@ -1,10 +1,58 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Dawaï Boubakari</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- <script src="./js/dom-rendering.js"></script> -->
 </head>
 
 <body>
-<H1>Hi ! I am Dawaï</H1>
+  <header>
+    <nav #id class=""
+      onclick="if(this.classList.contains('opened')){this.classList.remove('opened')}else{this.classList.add('opened')}">
+      <div #icon tabindex="0" class="icon">
+        <div class="lines">
+          <div class="line top-left"></div>
+          <div class="line top-right"></div>
+        </div>
+        <div class="lines">
+          <div class="line bottom-left"></div>
+          <div class="line bottom-right"></div>
+        </div>
+      </div>
+      <ul rend-if="1 == 1">
+        <li style="--i:-2;"><a href="" class="home active" rend-if="false == false">HOME</a></li>
+        <li style="--i:-0.65;"><a href="" class="about">ABOUT</a></li>
+        <li style="--i:0.65;"><a href="" class="skills">SKILLS</a></li>
+        <li style="--i:2;"><a href="" class="contact">CONTACT</a></li>
+      </ul>
+      <ul rend-if="false">
+        <li rend-for="let i in [-2, -0.65, 0.65, 2]" style="--i: {{i}};">SOME</li>
+      </ul>
+    </nav>
+  </header>
+  <section class="start">
+    <canvas class="canvas">Votre navigateur ne supporte pas WebGL !</canvas>
+    <div class="super"></div>
+  </section>
+
+  <script async src="./js/es-module-shims.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "addons/": "./node_modules/three/examples/jsm/",
+        "fonts/": "./node_modules/three/examples/fonts/"
+      }
+    }
+  </script>
+  <script src="./js/dom-rendering.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
